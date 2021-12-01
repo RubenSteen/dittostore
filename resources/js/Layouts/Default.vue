@@ -1,10 +1,13 @@
 <template>
   <div>
-    <slot />
+      <AppHead title="Default" />
+      <slot />
   </div>
 </template>
 
 <script>
+
+
 export default {
 
 }

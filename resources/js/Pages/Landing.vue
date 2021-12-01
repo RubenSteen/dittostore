@@ -1,5 +1,7 @@
 
 <template>
+    <AppHead title="Landing" />
+    
   <div class="bg-white">
     <!-- Mobile menu -->
     <TransitionRoot as="template" :show="mobileMenuOpen">
@@ -397,6 +399,7 @@
 </template>
 
 <script>
+import Layout from '@/Layouts/Default'
 import { ref } from 'vue'
 import {
   Dialog,
@@ -559,6 +562,7 @@ const footerNavigation = {
 }
 
 export default {
+    layout: Layout,
   components: {
     Dialog,
     DialogOverlay,
