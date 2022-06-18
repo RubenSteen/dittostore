@@ -19,7 +19,7 @@ InertiaProgress.init({
 })
 
 createInertiaApp({
-  title: title => `${title} - My App`,
+  title: title => `${title} - Dittostore`,
 
   // Default Layouts (https://laracasts.com/series/build-modern-laravel-apps-using-inertia-js/episodes/13)
   resolve: name => {

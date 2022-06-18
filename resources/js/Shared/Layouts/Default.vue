@@ -1,9 +1,5 @@
 <template>
-	<div class="min-h-full">
-		<Header />
-
-		<slot />
-	</div>
+	<slot />
 </template>
 
 <script setup>
