@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
@@ -70,3 +71,5 @@ Route::get('/', function () {
         'users' => App\Models\User::orderBy('created_at', 'desc')->take(5)->get()
     ]);
 })->name('home');
+
+Route::post('newsletter', [NewsletterController::class, 'store'])->name('newsletter');
