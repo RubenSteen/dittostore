@@ -72,4 +72,25 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
+Route::get('/product', function () {
+    return inertia('Product');
+});
+
+Route::get('/categories', function () {
+    return inertia('Categories');
+});
+
+Route::get('/cart', function () {
+    return inertia('Cart');
+});
+
+Route::get('/checkout', function () {
+    return inertia('Checkout');
+});
+
+Route::get('/order-history', function () {
+    return inertia('OrderHistory');
+});
+
+
 Route::post('newsletter', [NewsletterController::class, 'store'])->name('newsletter');

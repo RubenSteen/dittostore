@@ -2,7 +2,9 @@
 	<div class="bg-white">
 		<Header />
 
-		<slot />
+		<main>
+			<slot />
+		</main>
 
 		<Footer />
 	</div>
