@@ -109,10 +109,10 @@
 
 						<div class="border-t border-gray-200 py-6 px-4 space-y-6">
 							<div class="flow-root">
-								<a href="#" class="-m-2 p-2 block font-medium text-gray-900">Create an account</a>
+								<Link :href="route('register')" class="-m-2 p-2 block font-medium text-gray-900">Create an account</Link>
 							</div>
 							<div class="flow-root">
-								<a href="#" class="-m-2 p-2 block font-medium text-gray-900">Sign in</a>
+								<Link :href="route('login')" class="-m-2 p-2 block font-medium text-gray-900">Sign in</Link>
 							</div>
 						</div>
 
@@ -173,9 +173,9 @@
 					<p class="flex-1 text-center text-sm font-medium text-white lg:flex-none">Get free delivery on orders over $100</p>
 
 					<div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-						<a href="#" class="text-sm font-medium text-white hover:text-gray-100">Create an account</a>
+						<Link :href="route('register')" class="text-sm font-medium text-white hover:text-gray-100">Create an account</Link>
 						<span class="h-6 w-px bg-gray-600" aria-hidden="true" />
-						<a href="#" class="text-sm font-medium text-white hover:text-gray-100">Sign in</a>
+						<Link :href="route('login')" class="text-sm font-medium text-white hover:text-gray-100">Sign in</Link>
 					</div>
 				</div>
 			</div>
@@ -217,62 +217,64 @@
 												leave-from-class="opacity-100"
 												leave-to-class="opacity-0"
 											>
-												<PopoverPanel class="absolute top-full inset-x-0 text-gray-500 sm:text-sm">
-													<!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-													<div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
+												<div>
+													<PopoverPanel class="absolute top-full inset-x-0 text-gray-500 sm:text-sm">
+														<!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
+														<div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
 
-													<div class="relative bg-white">
-														<div class="max-w-7xl mx-auto px-8">
-															<div class="grid grid-cols-2 items-start gap-y-10 gap-x-8 pt-10 pb-12">
-																<div class="grid grid-cols-2 gap-y-10 gap-x-8">
-																	<div>
-																		<p :id="`desktop-featured-heading-${categoryIdx}`" class="font-medium text-gray-900">Featured</p>
-																		<ul role="list" :aria-labelledby="`desktop-featured-heading-${categoryIdx}`" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
-																			<li v-for="item in category.featured" :key="item.name" class="flex">
-																				<a :href="item.href" class="hover:text-gray-800">
-																					{{ item.name }}
-																				</a>
-																			</li>
-																		</ul>
+														<div class="relative bg-white">
+															<div class="max-w-7xl mx-auto px-8">
+																<div class="grid grid-cols-2 items-start gap-y-10 gap-x-8 pt-10 pb-12">
+																	<div class="grid grid-cols-2 gap-y-10 gap-x-8">
+																		<div>
+																			<p :id="`desktop-featured-heading-${categoryIdx}`" class="font-medium text-gray-900">Featured</p>
+																			<ul role="list" :aria-labelledby="`desktop-featured-heading-${categoryIdx}`" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+																				<li v-for="item in category.featured" :key="item.name" class="flex">
+																					<a :href="item.href" class="hover:text-gray-800">
+																						{{ item.name }}
+																					</a>
+																				</li>
+																			</ul>
+																		</div>
+																		<div>
+																			<p id="desktop-categories-heading" class="font-medium text-gray-900">Categories</p>
+																			<ul role="list" aria-labelledby="desktop-categories-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+																				<li v-for="item in category.categories" :key="item.name" class="flex">
+																					<a :href="item.href" class="hover:text-gray-800">
+																						{{ item.name }}
+																					</a>
+																				</li>
+																			</ul>
+																		</div>
 																	</div>
-																	<div>
-																		<p id="desktop-categories-heading" class="font-medium text-gray-900">Categories</p>
-																		<ul role="list" aria-labelledby="desktop-categories-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
-																			<li v-for="item in category.categories" :key="item.name" class="flex">
-																				<a :href="item.href" class="hover:text-gray-800">
-																					{{ item.name }}
-																				</a>
-																			</li>
-																		</ul>
-																	</div>
-																</div>
-																<div class="grid grid-cols-2 gap-y-10 gap-x-8">
-																	<div>
-																		<p id="desktop-collection-heading" class="font-medium text-gray-900">Collection</p>
-																		<ul role="list" aria-labelledby="desktop-collection-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
-																			<li v-for="item in category.collection" :key="item.name" class="flex">
-																				<a :href="item.href" class="hover:text-gray-800">
-																					{{ item.name }}
-																				</a>
-																			</li>
-																		</ul>
-																	</div>
+																	<div class="grid grid-cols-2 gap-y-10 gap-x-8">
+																		<div>
+																			<p id="desktop-collection-heading" class="font-medium text-gray-900">Collection</p>
+																			<ul role="list" aria-labelledby="desktop-collection-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+																				<li v-for="item in category.collection" :key="item.name" class="flex">
+																					<a :href="item.href" class="hover:text-gray-800">
+																						{{ item.name }}
+																					</a>
+																				</li>
+																			</ul>
+																		</div>
 
-																	<div>
-																		<p id="desktop-brand-heading" class="font-medium text-gray-900">Brands</p>
-																		<ul role="list" aria-labelledby="desktop-brand-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
-																			<li v-for="item in category.brands" :key="item.name" class="flex">
-																				<a :href="item.href" class="hover:text-gray-800">
-																					{{ item.name }}
-																				</a>
-																			</li>
-																		</ul>
+																		<div>
+																			<p id="desktop-brand-heading" class="font-medium text-gray-900">Brands</p>
+																			<ul role="list" aria-labelledby="desktop-brand-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
+																				<li v-for="item in category.brands" :key="item.name" class="flex">
+																					<a :href="item.href" class="hover:text-gray-800">
+																						{{ item.name }}
+																					</a>
+																				</li>
+																			</ul>
+																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
-													</div>
-												</PopoverPanel>
+													</PopoverPanel>
+												</div>
 											</transition>
 										</Popover>
 
