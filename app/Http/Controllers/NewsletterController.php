@@ -14,12 +14,10 @@ class NewsletterController extends Controller
             'email' => ['required', 'email'],
         ]);
 
-        sleep(5);
-
         if (! NewsletterSignups::where('email', $data['email'] )->exists()) {
             NewsletterSignups::create($data);
         }
 
-        return Redirect::back()->with('success', 'Organization deleted.');
+        return Redirect::back()->with('successNewsletter', 'You have been subscribed to our newsletter!');
     }
 }

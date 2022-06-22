@@ -372,9 +372,9 @@
 						</div>
 					</div>
 					<div class="mt-16 md:mt-16 xl:mt-0">
-						<h3 class="text-sm font-medium text-gray-900">Sign up for our newsletter</h3>
+						<h3 class="text-sm font-medium text-gray-900">Newsletter</h3>
 						<p class="mt-6 text-sm text-gray-500">The latest deals and savings, sent to your inbox weekly.</p>
-						<form class="mt-2 flex sm:max-w-md" @submit.prevent="newsletterSubmit">
+						<form v-show="!$page.props.flash.successNewsletter" class="mt-2 flex sm:max-w-md" @submit.prevent="newsletterSubmit">
 							<label for="email-address" class="sr-only">Email address</label>
 							<input
 								v-model="newsletterForm.email"
@@ -389,10 +389,11 @@
 									:disabled="newsletterForm.processing"
 									type="submit"
 								>
-									Sign up
+									Subscribe
 								</button>
 							</div>
 						</form>
+						<p v-show="$page.props.flash.successNewsletter" class="mt-2 text-sm text-green-500">{{ $page.props.flash.successNewsletter }}</p>
 					</div>
 				</div>
 
@@ -430,7 +431,11 @@ let newsletterForm = useForm({
 })
 
 let newsletterSubmit = () => {
-	newsletterForm.post(route("newsletter"))
+	newsletterForm.post(route("newsletter"), {
+		preserveScroll: true
+	})
+
+	newsletterForm.reset()
 }
 
 const navigation = {
