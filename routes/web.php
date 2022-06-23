@@ -92,5 +92,9 @@ Route::get('/order-history', function () {
     return inertia('OrderHistory');
 });
 
+Route::get('/purchased', function () {
+    return inertia('Purchased');
+});
+
 
 Route::post('newsletter', [NewsletterController::class, 'store'])->name('newsletter');
