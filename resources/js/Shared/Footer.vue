@@ -1,5 +1,5 @@
 <template>
-	<footer aria-labelledby="footer-heading" class="bg-white">
+	<footer aria-labelledby="footer-heading" class="bg-gray-50">
 		<h2 id="footer-heading" class="sr-only">Footer</h2>
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
