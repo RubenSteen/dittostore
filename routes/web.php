@@ -82,7 +82,7 @@ Route::get('/categories', function () {
 
 Route::get('/cart', function () {
     return inertia('Cart');
-});
+})->name('cart');
 
 Route::get('/checkout', function () {
     return inertia('Checkout');

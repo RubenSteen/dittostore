@@ -187,10 +187,10 @@
 						<div class="h-16 flex items-center justify-between">
 							<!-- Logo (lg+) -->
 							<div class="hidden lg:flex lg:items-center">
-								<a href="#">
+								<Link :href="route('home')">
 									<span class="sr-only">Workflow</span>
 									<img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600" alt="" />
-								</a>
+								</Link>
 							</div>
 
 							<div class="hidden h-full lg:flex">
@@ -330,11 +330,11 @@
 									<span class="mx-4 h-6 w-px bg-gray-200 lg:mx-6" aria-hidden="true" />
 
 									<div class="flow-root">
-										<a href="#" class="group -m-2 p-2 flex items-center">
+										<Link :href="route('cart')" class="group -m-2 p-2 flex items-center">
 											<ShoppingCartIcon class="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
 											<span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
 											<span class="sr-only">items in cart, view bag</span>
-										</a>
+										</Link>
 									</div>
 								</div>
 							</div>
@@ -426,10 +426,7 @@ const navigation = {
 			]
 		}
 	],
-	pages: [
-		{ name: "Company", href: "#" },
-		{ name: "Stores", href: "#" }
-	]
+	pages: [{ name: "Order History", href: "/order-history" }]
 }
 
 const mobileMenuOpen = ref(false)
