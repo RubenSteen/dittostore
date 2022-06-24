@@ -1,7 +1,7 @@
 <template>
 	<Head title="Product" />
 
-	<div class="mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+	<div class="mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
 		<!-- Product -->
 		<div class="lg:grid lg:grid-rows-1 lg:grid-cols-7 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16">
 			<!-- Product image -->

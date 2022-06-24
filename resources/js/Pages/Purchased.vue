@@ -1,7 +1,7 @@
 <template>
 	<Head title="Purchased" />
 
-	<div class="max-w-3xl mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+	<div class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
 		<div class="max-w-xl">
 			<h1 class="text-sm font-semibold uppercase tracking-wide text-indigo-600">Thank you!</h1>
 			<p class="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">It's on the way!</p>
