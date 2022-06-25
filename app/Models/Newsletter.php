@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\UsesUuid;
 
-class NewsletterSignups extends Model
+class Newsletter extends Model
 {
     use HasFactory, UsesUuid;
 

@@ -10,14 +10,14 @@ use App\Http\Controllers\Auth\RegisterController;
 | Examples
 |--------------------------------------------------------------------------
 |
-| Route::get('users', ['as' => 'user.index',    'uses' => 'UserController@index']);
-| Route::get('user/create', ['as' => 'user.create', 'uses' => 'UserController@create']);
-| Route::post('user', ['as' => 'user.store',    'uses' => 'UserController@store']);
-| Route::get('user/{user_id}', ['as' => 'user.show',    'uses' => 'UserController@show']);
-| Route::get('user/{user_id}/edit', ['as' => 'user.edit',   'uses' => 'UserController@edit']);
-| Route::patch('user/{user_id}', ['as' => 'user.update',    'uses' => 'UserController@update']);
-| Route::delete('user/{user_id}', ['as' => 'user.delete',   'uses' => 'UserController@delete']);
-| Route::put('user/{user_id}', ['as' => 'user.restore', 'uses' => 'UserController@restore']);
+| Route::get('users', [UserController::class, 'index'])->name('user.index');
+| Route::get('user/create', [UserController::class, 'create'])->name('user.create');
+| Route::post('user', [UserController::class, 'store'])->name('user.store');
+| Route::get('user{user_id}', [UserController::class, 'show'])->name('user.show');
+| Route::get('user/{user_id}/edit', [UserController::class, 'edit'])->name('user.edit');
+| Route::patch('user/{user_id}', [UserController::class, 'update'])->name('user.update');
+| Route::delete('user/{user_id}', [UserController::class, 'delete'])->name('user.delete');
+| Route::put('user/{user_id}', [UserController::class, 'restore'])->name('user.restore');
 |
 | For autodiscovery use {user:id} instead of ${user_id}
 */
@@ -97,4 +97,6 @@ Route::get('/purchased', function () {
 });
 
 
+Route::get('newsletter/{newsletter_id}', [NewsletterController::class, 'show'])->name('newsletter.show');
 Route::post('newsletter', [NewsletterController::class, 'store'])->name('newsletter');
+Route::delete('newsletter', [NewsletterController::class, 'delete'])->name('newsletter');
